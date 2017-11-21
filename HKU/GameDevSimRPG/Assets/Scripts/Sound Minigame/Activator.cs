@@ -15,22 +15,38 @@ public class Activator : MonoBehaviour {
 
     public Sprite baseSprite;
     public Sprite downSprite;
+
+    public bool createMode;
+
+    public GameObject parent;
+    public GameObject n;
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown(key))
+        if(createMode == true)
         {
-            image.sprite = downSprite;
+            if (Input.GetKeyDown(key))
+            {
+                Instantiate(n, transform.position, Quaternion.identity, parent.transform);
+            }
         }
-        if (Input.GetKeyUp(key))
+        else
         {
-            image.sprite = baseSprite;
+            if (Input.GetKeyDown(key))
+            {
+                image.sprite = downSprite;
+            }
+            if (Input.GetKeyUp(key))
+            {
+                image.sprite = baseSprite;
+            }
+            if (Input.GetKeyDown(key) && active)
+            {
+                Destroy(note);
+            }
         }
-        if (Input.GetKeyDown(key) && active)
-        {
-            Destroy(note);
-        }
+
 	}
 
     void OnTriggerEnter2D(Collider2D col)

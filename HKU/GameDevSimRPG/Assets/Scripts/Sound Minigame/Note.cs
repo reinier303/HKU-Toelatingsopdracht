@@ -7,22 +7,50 @@ public class Note : MonoBehaviour {
 
     Rigidbody2D rb;
     public float speed;
+    public Image image;
+    public float xpos;
 
     void Awake()
     {
+        image = gameObject.GetComponent<Image>();
         rb = GetComponent<Rigidbody2D>();
     }
     // Use this for initialization
     void Start()
     {
+        xpos = transform.position.x - (Screen.width/2);
         rb.velocity = new Vector2(0, -speed);
+        if (xpos == -187.5f)
+        {
+            image.color = new Color32(255, 100, 100, 240);
+        }
+        if (xpos == -112.5f)
+        {
+            image.color = new Color32(255, 255, 150, 240);
+        }
+        if (xpos == -37.5f)
+        {
+            image.color = new Color32(170, 255, 170, 240);
+        }
+        if (xpos == 37.5f)
+        {
+            image.color = new Color32(170, 220, 255, 240);
+        }
+        if (xpos == 112.5f)
+        {
+            image.color = new Color32(255, 190, 90, 240);
+        }
+        if (xpos == 187.5f)
+        {
+            image.color = new Color32(255, 150, 255, 240);
+        }
     }
 
     void Update()
     {
-        if(transform.position.y <= -100)
-        {
-            Destroy(gameObject);
-        }
+        //if(transform.position.y <= -100)
+        //{
+            //gameObject.SetActive(false);
+        //}
     }
 }

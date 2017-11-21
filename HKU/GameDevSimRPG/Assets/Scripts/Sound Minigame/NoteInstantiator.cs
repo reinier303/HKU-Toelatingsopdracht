@@ -13,6 +13,8 @@ public class NoteInstantiator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        BPM = (60 / BPM);
         Timer = BPM;
 	}
 	
@@ -43,7 +45,7 @@ public class NoteInstantiator : MonoBehaviour {
         Timer -= Time.deltaTime;
         if(Timer <= 0)
         {
-            Note = Instantiate(Note, new Vector3(xpos + (Screen.width/2), 800, 0), transform.rotation, NotePanel.transform)as GameObject;
+            Note = Instantiate(Note, new Vector3(xpos + (Screen.width/2), 1200, 0), transform.rotation, NotePanel.transform)as GameObject;
             ChangeColor();
             Timer = BPM;
         }

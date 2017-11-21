@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
+  image: {fileID: 114378857215284158}
+  xpos: 0
 --- !u!114 &114378857215284158
 MonoBehaviour:
   m_ObjectHideFlags: 1
