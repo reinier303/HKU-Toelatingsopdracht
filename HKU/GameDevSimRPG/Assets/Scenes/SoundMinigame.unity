@@ -190,8 +190,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Note: {fileID: 1525834140329946, guid: d8d14307944827548bddcdaf31f703b7, type: 2}
   NotePanel: {fileID: 8022839}
-  BPM: 0.25
+  BPM: 0.5
   Timer: 0.25
+  xpos: 0
 --- !u!1 &59882742
 GameObject:
   m_ObjectHideFlags: 0
