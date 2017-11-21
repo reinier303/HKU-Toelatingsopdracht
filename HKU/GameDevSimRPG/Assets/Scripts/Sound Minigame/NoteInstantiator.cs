@@ -42,7 +42,7 @@ public class NoteInstantiator : MonoBehaviour {
         Timer -= Time.deltaTime;
         if(Timer <= 0)
         {
-            Note = Instantiate(Note, new Vector3(xpos + 512.5f, 800, 0), transform.rotation, NotePanel.transform)as GameObject;
+            Note = Instantiate(Note, new Vector3(xpos + (Screen.width/2), 800, 0), transform.rotation, NotePanel.transform)as GameObject;
             Timer = BPM;
         }
     }
