@@ -8,12 +8,13 @@ public class NoteInstantiator : MonoBehaviour {
     public GameObject Note;
     public GameObject NotePanel;
     public float BPM;
-    public float Timer;
-    public float xpos;
+    private float Timer;
+    private float xpos;
+    public float spawnHeight;
+
 
 	// Use this for initialization
 	void Start () {
-
         BPM = (60 / BPM);
         Timer = BPM;
 	}
@@ -45,39 +46,13 @@ public class NoteInstantiator : MonoBehaviour {
         Timer -= Time.deltaTime;
         if(Timer <= 0)
         {
-            Note = Instantiate(Note, new Vector3(xpos + (Screen.width/2), 1200, 0), transform.rotation, NotePanel.transform)as GameObject;
-            ChangeColor();
+            Note = Instantiate(Note, new Vector3(xpos + (Screen.width/2), spawnHeight, 0), transform.rotation, NotePanel.transform)as GameObject;
             Timer = BPM;
         }
+
     }
 
-    void ChangeColor()
-    {
-        Image noteImage = Note.GetComponent<Image>();
 
-        if (xpos == -187.5f)
-        {
-            noteImage.color = new Color32(255, 100, 100, 240);
-        }
-        if (xpos == -112.5f)
-        {
-            noteImage.color = new Color32(255, 255, 150, 240);
-        }
-        if (xpos == -37.5f)
-        {
-            noteImage.color = new Color32(170, 255, 170, 240);
-        }
-        if (xpos == 37.5f)
-        {
-            noteImage.color = new Color32(170, 220, 255, 240);
-        }
-        if (xpos == 112.5f)
-        {
-            noteImage.color = new Color32(255, 190, 90, 240);
-        }
-        if (xpos == 187.5f)
-        {
-            noteImage.color = new Color32(255, 150, 255, 240);
-        }
-    }
+
+
 }

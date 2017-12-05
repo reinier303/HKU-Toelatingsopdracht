@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Activator : MonoBehaviour {
+public class Activator : MonoBehaviour
+{
+    public ScoreKeeper SK;
+    public KeyCode Key;
 
-    public KeyCode key;
-
-    bool active = false;
+    private bool _active = false;
 
     GameObject note;
 
@@ -16,34 +17,44 @@ public class Activator : MonoBehaviour {
     public Sprite baseSprite;
     public Sprite downSprite;
 
-    public bool createMode;
+    public bool CreateMode;
 
-    public GameObject parent;
-    public GameObject n;
-	
-	// Update is called once per frame
-	void Update ()
+    public GameObject Parent;
+    public GameObject N;
+
+    private void Start()
     {
-        if(createMode == true)
+        SK = GetComponentInParent<ScoreKeeper>();
+    }
+
+    // Update is called once per frame
+    private void Update ()
+    {
+        if(CreateMode == true)
         {
-            if (Input.GetKeyDown(key))
+            if (Input.GetKeyDown(Key))
             {
-                Instantiate(n, transform.position, Quaternion.identity, parent.transform);
+                Instantiate(N, transform.position, Quaternion.identity, Parent.transform);
             }
         }
         else
         {
-            if (Input.GetKeyDown(key))
+            
+            if (Input.GetKeyDown(Key))
             {
                 image.sprite = downSprite;
             }
-            if (Input.GetKeyUp(key))
+            if (Input.GetKeyUp(Key))
             {
                 image.sprite = baseSprite;
             }
-            if (Input.GetKeyDown(key) && active)
+            if (Input.GetKeyDown(Key) && _active)
             {
                 Destroy(note);
+                SK.Score += 100;
+
+                SK.EnergyCounter++;
+                
             }
         }
 
@@ -51,7 +62,7 @@ public class Activator : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        active = true;
+        _active = true;
 
         if(col.gameObject.tag == "Note")
         {
@@ -61,7 +72,7 @@ public class Activator : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        active = false;
+        _active = false;
     }
 
 

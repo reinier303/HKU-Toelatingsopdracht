@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Note : MonoBehaviour {
 
+    public ScoreKeeper SK;
+
+    private GameObject Panel;
     Rigidbody2D rb;
     public float speed;
     public Image image;
@@ -18,6 +21,9 @@ public class Note : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        Panel = GameObject.Find("ActivatorPanel");
+
+        SK = Panel.GetComponent<ScoreKeeper>();
         xpos = transform.position.x - (Screen.width/2);
         rb.velocity = new Vector2(0, -speed);
         if (xpos == -187.5f)
@@ -46,11 +52,12 @@ public class Note : MonoBehaviour {
         }
     }
 
-    void Update()
+    private void Update()
     {
-        //if(transform.position.y <= -100)
-        //{
-            //gameObject.SetActive(false);
-        //}
+        if (transform.position.y <= -75)
+        {
+            Destroy(gameObject);
+            SK.Energy -= 1;
+        }
     }
 }
