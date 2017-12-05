@@ -24,12 +24,12 @@ public class ScoreKeeper : MonoBehaviour {
     void Update()
     {
         //Update UI
-        ScoreText.text = "Score: " + Score;
+        ScoreText.text = "" + Score;
         EnergyText.text = Energy + "/10";
 
         EnergyBar.value = Energy / 10;
 
-        if (EnergyCounter >= 30)
+        if (EnergyCounter >= 30 && Energy < 10)
         {
             EnergyCounter = 0;
             Energy += 1;
