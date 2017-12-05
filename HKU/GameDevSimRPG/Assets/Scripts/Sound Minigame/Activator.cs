@@ -38,8 +38,7 @@ public class Activator : MonoBehaviour
             }
         }
         else
-        {
-            
+        {           
             if (Input.GetKeyDown(Key))
             {
                 image.sprite = downSprite;

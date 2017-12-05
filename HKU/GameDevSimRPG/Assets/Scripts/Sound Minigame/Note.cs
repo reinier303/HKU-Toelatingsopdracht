@@ -59,5 +59,9 @@ public class Note : MonoBehaviour {
             Destroy(gameObject);
             SK.Energy -= 1;
         }
+        if (SK.Energy == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

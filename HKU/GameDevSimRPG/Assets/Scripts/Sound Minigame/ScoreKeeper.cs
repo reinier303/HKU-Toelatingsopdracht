@@ -29,7 +29,7 @@ public class ScoreKeeper : MonoBehaviour {
 
         EnergyBar.value = Energy / 10;
 
-        if (EnergyCounter >= 30 && Energy < 10)
+        if (EnergyCounter >= 30 && Energy < 10 && Energy > 0)
         {
             EnergyCounter = 0;
             Energy += 1;

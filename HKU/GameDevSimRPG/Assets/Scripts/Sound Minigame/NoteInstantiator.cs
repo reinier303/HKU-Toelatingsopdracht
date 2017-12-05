@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class NoteInstantiator : MonoBehaviour {
 
+    public ScoreKeeper SK;
+    private GameObject Panel;
     public GameObject Note;
     public GameObject NotePanel;
     public float BPM;
@@ -15,6 +17,8 @@ public class NoteInstantiator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+	    Panel = GameObject.Find("ActivatorPanel");
+	    SK = Panel.GetComponent<ScoreKeeper>();
         BPM = (60 / BPM);
         Timer = BPM;
 	}
@@ -44,7 +48,7 @@ public class NoteInstantiator : MonoBehaviour {
                 break;
         }
         Timer -= Time.deltaTime;
-        if(Timer <= 0)
+        if(Timer <= 0 && SK.Energy > 0)
         {
             Note = Instantiate(Note, new Vector3(xpos + (Screen.width/2), spawnHeight, 0), transform.rotation, NotePanel.transform)as GameObject;
             Timer = BPM;
