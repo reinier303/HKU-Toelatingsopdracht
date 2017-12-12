@@ -8,10 +8,13 @@ public class WordDisplay : MonoBehaviour {
     public Text text;
     public Outline outline;
 
+    public CodingScoreKeeper codingScoreKeeper;
+
     public float FadeTime;
 
     private void Start()
     {
+        codingScoreKeeper = GameObject.Find("Canvas").GetComponent<CodingScoreKeeper>();
         StartCoroutine(Fade());
     }
 
@@ -36,6 +39,9 @@ public class WordDisplay : MonoBehaviour {
     {
         text.CrossFadeAlpha(0, FadeTime, false);
         yield return new WaitForSeconds(FadeTime);
+
+        codingScoreKeeper.Energy--;
+
         Destroy(gameObject);
     }
     
