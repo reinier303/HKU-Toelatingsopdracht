@@ -45,7 +45,7 @@ public class Word{
             }
             display.RemoveWord();
             codingScoreKeeper.Score += codingScoreKeeper.scoreToGive;
-            codingScoreKeeper.scoreToGive += 10;
+            codingScoreKeeper.scoreToGive += 5;
             codingScoreKeeper.EnergyCounter++;
         }
         return wordTyped;

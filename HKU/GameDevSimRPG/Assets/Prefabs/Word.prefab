@@ -43,7 +43,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 114147246321034538}
   outline: {fileID: 114327343349890006}
-  FadeTime: 9.850896
+  codingScoreKeeper: {fileID: 0}
+  FadeTime: 0.9332294
 --- !u!114 &114147246321034538
 MonoBehaviour:
   m_ObjectHideFlags: 1

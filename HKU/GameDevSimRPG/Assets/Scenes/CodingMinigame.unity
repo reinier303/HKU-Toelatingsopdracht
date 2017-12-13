@@ -384,7 +384,8 @@ MonoBehaviour:
   wordManager: {fileID: 812417588}
   wordDisplay: {fileID: 114068375272104720, guid: d3e82ee34eda00b4dbdda397ff042d2b,
     type: 2}
-  wordDelay: 2.5
+  codingScoreKeeper: {fileID: 1366365855}
+  wordDelay: 0.1
 --- !u!1 &990208841
 GameObject:
   m_ObjectHideFlags: 0

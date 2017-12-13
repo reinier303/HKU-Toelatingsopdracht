@@ -6,6 +6,7 @@ public class WordTimer : MonoBehaviour {
 
     public WordManager wordManager;
     public WordDisplay wordDisplay;
+    public CodingScoreKeeper codingScoreKeeper;
 
     public float wordDelay = 3f;
     private float nextWordTime = 0.5f;
@@ -17,12 +18,15 @@ public class WordTimer : MonoBehaviour {
 
     private void Update()
     {
-        if(Time.time >= nextWordTime)
+        if (codingScoreKeeper.Energy > 0)
         {
-            wordManager.AddWord();
-            nextWordTime = Time.time + wordDelay;
-            wordDelay *= 0.995f;
-            wordDisplay.FadeTime *= 0.997f;
-        } 
+            if (Time.time >= nextWordTime)
+            {
+                wordManager.AddWord();
+                nextWordTime = Time.time + wordDelay;
+                wordDelay *= 0.995f;
+                wordDisplay.FadeTime *= 0.997f;
+            }
+        }
     }
 }
