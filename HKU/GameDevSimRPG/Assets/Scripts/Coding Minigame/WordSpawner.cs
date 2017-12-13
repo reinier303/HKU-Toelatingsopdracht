@@ -11,7 +11,7 @@ public class WordSpawner : MonoBehaviour {
 
     public WordDisplay SpawnWord()
     {
-        Vector3 randomPosition = new Vector3(Random.Range(400, (Screen.width - 390)), Random.Range(((Screen.height/2) - (Screen.height / 2.5f)), ((Screen.height/2) + (Screen.height / 2.5f))));
+        Vector3 randomPosition = new Vector3(Random.Range(200, (Screen.width - 200)), Random.Range(((Screen.height/2) - (Screen.height / 2.5f)), ((Screen.height/2) + (Screen.height / 2.5f))));
 
         if(codingScoreKeeper.Energy > 0)
         {
