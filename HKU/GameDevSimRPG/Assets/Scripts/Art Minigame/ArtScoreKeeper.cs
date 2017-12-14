@@ -13,12 +13,15 @@ public class ArtScoreKeeper : MonoBehaviour
     public float EnergyCounter = 0;
     public float blocksClicked = 0;
     public float blocksNeededForReset;
+    public float Timer;
+    public float TimerMax;
 
     public Text ScoreText;
     public Text EnergyText;
     public Text ScoreText2;
     public Text EnergyText2;
     public Text FinalScoreText;
+    public Text TimerText;
 
     public Slider EnergyBar;
 
@@ -28,16 +31,22 @@ public class ArtScoreKeeper : MonoBehaviour
     {
         childrenRandomColor = GetComponentInChildren<ChildrenRandomColor>();
         blocksNeededForReset = 64;
+        TimerMax = 50;
+        Timer = TimerMax;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Timer -= Time.deltaTime;
         //Update UI
+
         ScoreText.text = "" + Score;
         EnergyText.text = Energy + "/10";
+        TimerText.text = "Time: " + Mathf.Round(Timer);
 
         EnergyBar.value = Energy / 10;
+
 
         if (EnergyCounter >= 30 && Energy < 10 && Energy > 0)
         {
