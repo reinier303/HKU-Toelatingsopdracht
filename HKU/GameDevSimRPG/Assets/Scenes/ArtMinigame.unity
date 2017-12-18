@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 80556524}
   - component: {fileID: 80556523}
   m_Layer: 5
-  m_Name: Score (1)
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2027,8 +2027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 300}
+  m_AnchoredPosition: {x: 0, y: 0.0000076294}
+  m_SizeDelta: {x: 800, y: 540}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &525068466
 MonoBehaviour:
@@ -2421,8 +2421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7411b5d00bbfa714a9f52755886a143a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childrenRandomColor: {fileID: 0}
+  childrenRandomColor: {fileID: 1349923832}
   Score: 0
+  ScoreToGive: 0
   Energy: 10
   EnergyCounter: 0
   blocksClicked: 0
@@ -2434,7 +2435,9 @@ MonoBehaviour:
   ScoreText2: {fileID: 1780799461}
   EnergyText2: {fileID: 1508551138}
   FinalScoreText: {fileID: 525068467}
+  TimerText: {fileID: 80556524}
   EnergyBar: {fileID: 1849112489}
+  removeable: 0
 --- !u!1 &591798303
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class ArtScoreKeeper : MonoBehaviour
     public ChildrenRandomColor childrenRandomColor;
 
     public float Score;
+    public float ScoreToGive;
     public float Energy = 10;
     public float EnergyCounter = 0;
     public float blocksClicked = 0;
@@ -25,13 +26,17 @@ public class ArtScoreKeeper : MonoBehaviour
 
     public Slider EnergyBar;
 
+    public bool removeable;
+
 
     // Use this for initialization
     void Start()
     {
+        removeable = true;
+        ScoreToGive = 50;
         childrenRandomColor = GetComponentInChildren<ChildrenRandomColor>();
         blocksNeededForReset = 64;
-        TimerMax = 50;
+        TimerMax = 45;
         Timer = TimerMax;
     }
 
@@ -62,14 +67,34 @@ public class ArtScoreKeeper : MonoBehaviour
             EnergyBar.gameObject.SetActive(false);
             ScoreText2.gameObject.SetActive(false);
             EnergyText2.gameObject.SetActive(false);
+            TimerText.gameObject.SetActive(false);
 
             FinalScoreText.text = "Game over\n your final score is\n" + Score;
         }
 
         if (blocksClicked == blocksNeededForReset)
         {
+            TimerMax *= 0.85f;
+            Timer = TimerMax;
+            ScoreToGive += 5;
             childrenRandomColor.RandomColor();
             blocksNeededForReset += 64;
+        }
+        if (Timer < -1)
+        {
+            StartCoroutine(RemoveEnergy());
+        }
+
+    }
+
+    public IEnumerator RemoveEnergy()
+    {
+        if (removeable == true)
+        {
+            Energy--;
+            removeable = false; ;
+            yield return new WaitForSeconds(1);
+            removeable = true;
         }
     }
 }

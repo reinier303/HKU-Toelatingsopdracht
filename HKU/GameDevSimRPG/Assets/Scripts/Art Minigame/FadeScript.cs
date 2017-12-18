@@ -15,7 +15,7 @@ public class FadeScript : MonoBehaviour
         
         if (!scoreGiven)
         {
-            artScoreKeeper.Score += 100;
+            artScoreKeeper.Score += artScoreKeeper.ScoreToGive;
             artScoreKeeper.blocksClicked++;
         }
         scoreGiven = true;
