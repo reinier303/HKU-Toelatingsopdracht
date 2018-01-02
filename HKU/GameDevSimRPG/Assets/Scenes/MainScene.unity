@@ -2205,18 +2205,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239a0293b07b7da40a305f745356c135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  designLvl: 1
+  artLvl: 1
+  soundLvl: 1
+  codingLvl: 1
   designExp: 0
   artExp: 0
   soundExp: 0
-  CodingExp: 0
+  codingExp: 0
   designExpNeeded: 250
   artExpNeeded: 250
   soundExpNeeded: 250
-  CodingExpNeeded: 250
+  codingExpNeeded: 250
   designBar: {fileID: 1729696603}
   artBar: {fileID: 276701316}
   soundBar: {fileID: 2084213321}
   codingBar: {fileID: 1074328097}
+  designLvlText: {fileID: 1099653417}
+  artLvlText: {fileID: 47385520}
+  soundLvlText: {fileID: 1157476889}
+  codingLvlText: {fileID: 1052604282}
 --- !u!1 &1450278741
 GameObject:
   m_ObjectHideFlags: 0
