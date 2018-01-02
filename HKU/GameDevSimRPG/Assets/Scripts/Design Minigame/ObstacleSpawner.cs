@@ -34,5 +34,7 @@ public class ObstacleSpawner : MonoBehaviour {
     void ResetDelay()
     {
         delay = Random.Range(delayRange.x, delayRange.y);
+        delayRange.x *= 0.99f;
+        delayRange.y *= 0.99f;
     }
 }
