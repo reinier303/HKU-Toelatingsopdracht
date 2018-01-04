@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreateGame : MonoBehaviour {
 
     public SkillManager SM;
+
+    public GameObject GameStatPanel;
+
+    public Text RatingText;
+    public Text MoneyText;
+    public Text FansText;
 
     public float Rating;
     public float designLvl;
@@ -39,6 +46,8 @@ public class CreateGame : MonoBehaviour {
 
         Rating = designScore + artScore + soundScore + codingScore + Random.Range(-2f + (totalLvl / 35), 1.5f + (totalLvl / 35));
 
-        Debug.Log(Mathf.Round(Rating * 10) / 10);
+        GameStatPanel.SetActive(true);
+
+        RatingText.text = "Rating: " + Mathf.Round(Rating * 10) / 10 + "/10";
     }
 }

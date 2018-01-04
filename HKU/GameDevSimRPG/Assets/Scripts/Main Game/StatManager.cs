@@ -10,6 +10,7 @@ public class StatManager : MonoBehaviour {
     public Text LvlText;
 
     public float Money;
+    public int Fans;
     public int Lvl;
 
     public string CompanyName;
