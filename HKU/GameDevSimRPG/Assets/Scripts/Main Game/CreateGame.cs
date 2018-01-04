@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CreateGame : MonoBehaviour {
 
+    public SkillManager SM;
+
     public float Rating;
     public float designLvl;
     public float artLvl;
@@ -18,6 +20,11 @@ public class CreateGame : MonoBehaviour {
 
     void CalculateRating()
     {
+        designLvl = SM.designLvl;
+        artLvl = SM.artLvl;
+        soundLvl = SM.soundLvl;
+        totalLvl = SM.codingLvl;
+
         float designScore;
         float artScore;
         float soundScore;

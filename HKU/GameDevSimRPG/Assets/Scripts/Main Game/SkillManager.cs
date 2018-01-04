@@ -42,25 +42,25 @@ public class SkillManager : MonoBehaviour {
         soundLvlText.text = "Lvl: " + soundLvl;
         codingLvlText.text = "Lvl: " + codingLvl;
 
-        if (designExp >= designExpNeeded)
+        if (designExp >= designExpNeeded && designLvl < 10)
         {
             designLvl++;
-            designExpNeeded *= Mathf.Round(1.5f * designExpNeeded);
+            designExpNeeded = Mathf.Round(1.8f * designExpNeeded);
         }
-        if (artExp >= artExpNeeded)
+        if (artExp >= artExpNeeded && artLvl < 10)
         {
             artLvl++;
-            designExpNeeded *= Mathf.Round(1.5f * designExpNeeded);
+            artExpNeeded = Mathf.Round(1.8f * artExpNeeded);
         }
-        if (soundExp >= soundExpNeeded)
+        if (soundExp >= soundExpNeeded && soundLvl < 10)
         {
             soundLvl++;
-            designExpNeeded *= Mathf.Round(1.5f * designExpNeeded);
+            soundExpNeeded = Mathf.Round(1.8f * soundExpNeeded);
         }
-        if (codingExp >= codingExpNeeded)
+        if (codingExp >= codingExpNeeded && codingLvl < 10)
         {
             codingLvl++;
-            designExpNeeded *= Mathf.Round(1.5f * designExpNeeded);
+            codingExpNeeded = Mathf.Round(1.8f * codingExpNeeded);
         }
     }
 }
