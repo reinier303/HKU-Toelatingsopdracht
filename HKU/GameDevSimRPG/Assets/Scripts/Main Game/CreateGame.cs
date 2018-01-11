@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class CreateGame : MonoBehaviour {
 
-    public SkillManager SM;
+    public SkillManager SkM;
+    public StatManager StM;
 
     public GameObject GameStatPanel;
 
@@ -23,14 +24,17 @@ public class CreateGame : MonoBehaviour {
     public void Create()
     {
         CalculateRating();
+        CalculateFans();
+        CalculateMoney();
+        GameStatPanel.SetActive(true);
     }
 
     void CalculateRating()
     {
-        designLvl = SM.designLvl;
-        artLvl = SM.artLvl;
-        soundLvl = SM.soundLvl;
-        totalLvl = SM.codingLvl;
+        designLvl = SkM.designLvl;
+        artLvl = SkM.artLvl;
+        soundLvl = SkM.soundLvl;
+        totalLvl = SkM.codingLvl;
 
         float designScore;
         float artScore;
@@ -46,8 +50,63 @@ public class CreateGame : MonoBehaviour {
 
         Rating = designScore + artScore + soundScore + codingScore + Random.Range(-2f + (totalLvl / 35), 1.5f + (totalLvl / 35));
 
-        GameStatPanel.SetActive(true);
-
+        if(Rating < 1)
+        {
+            Rating = 1;
+        }
         RatingText.text = "Rating: " + Mathf.Round(Rating * 10) / 10 + "/10";
+    }
+
+    void CalculateFans()
+    {
+        float Fans = StM.Fans;  
+
+        float FansGained = ((Fans + 1)) / Random.Range(12f - Rating,50 - (Rating * 2f)) + 1;
+
+        StM.Fans += Mathf.Round(FansGained);
+
+        FansText.text = "Fans Gained: " + Mathf.Round(FansGained);
+    }
+
+    void CalculateMoney()
+    {
+        float MoneyGained = Rating * (Random.Range(StM.Fans * 2f, StM.Fans * 8));
+
+        if(Rating == 1)
+        {
+            MoneyGained *= 0.2f;
+        }
+        else if (Rating < 2)
+        {
+            MoneyGained *= 0.3f;
+        }
+        else if (Rating < 3)
+        {
+            MoneyGained *= 0.4f;
+        }
+        else if (Rating < 4)
+        {
+            MoneyGained *= 0.5f;
+        }
+        else if (Rating < 5)
+        {
+            MoneyGained *= 0.6f;
+        }
+        else if (Rating < 6)
+        {
+            MoneyGained *= 0.7f;
+        }
+        else if (Rating < 7)
+        {
+            MoneyGained *= 0.85f;
+        }
+        else if (Rating < 8)
+        {
+            MoneyGained *= 0.95f;
+        }
+
+        StM.Money += Mathf.Round(MoneyGained);
+
+        MoneyText.text = "Money Gained: " + Mathf.Round(MoneyGained);
     }
 }

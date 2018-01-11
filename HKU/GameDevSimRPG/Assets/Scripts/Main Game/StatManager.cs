@@ -8,9 +8,10 @@ public class StatManager : MonoBehaviour {
     public Text MoneyText;
     public Text NameText;
     public Text LvlText;
+    public Text FansText;
 
     public float Money;
-    public int Fans;
+    public float Fans;
     public int Lvl;
 
     public string CompanyName;
@@ -25,6 +26,7 @@ public class StatManager : MonoBehaviour {
 	void Update ()
     {
         MoneyText.text = "Money: " + Money;
+        FansText.text = "Fans: " + Fans;
         NameText.text = CompanyName;
         LvlText.text = "Lvl: " + Lvl;
     }
