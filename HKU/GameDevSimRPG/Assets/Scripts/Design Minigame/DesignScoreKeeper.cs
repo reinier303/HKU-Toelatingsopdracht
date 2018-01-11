@@ -27,7 +27,7 @@ public class DesignScoreKeeper : MonoBehaviour {
     void Update()
     {
         //Update UI
-        ScoreText.text = "" + Score;
+        ScoreText.text = "" + Mathf.Round(Score);
         EnergyText.text = Energy + "/3";
 
         EnergyBar.value = Energy / 3;
@@ -42,15 +42,19 @@ public class DesignScoreKeeper : MonoBehaviour {
             EnergyText2.gameObject.SetActive(false);
             player.SetActive(false);
             OS.active = false;
+            scoreToGive = 0;
 
             FinalScoreText.text = "Game over\n your final score is\n" + Score;
         }
-
-        Timer -= Time.deltaTime;
+        if(Energy > 0)
+        {
+            Timer -= Time.deltaTime;
+        }
 
         if(Timer <= 0)
         {
             Timer = 0.1f;
+            scoreToGive += 0.075f;
             Score += scoreToGive / 10;
         }
     }
