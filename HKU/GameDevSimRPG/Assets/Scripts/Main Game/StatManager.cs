@@ -6,15 +6,12 @@ using UnityEngine.UI;
 public class StatManager : MonoBehaviour {
 
     public Text MoneyText;
-    public Text NameText;
     public Text LvlText;
     public Text FansText;
 
     public float Money;
     public float Fans;
     public int Lvl;
-
-    public string CompanyName;
 
 	// Use this for initialization
 	void Start ()
@@ -27,7 +24,6 @@ public class StatManager : MonoBehaviour {
     {
         MoneyText.text = "Money: " + Money;
         FansText.text = "Fans: " + Fans;
-        NameText.text = CompanyName;
         LvlText.text = "Lvl: " + Lvl;
     }
 }
