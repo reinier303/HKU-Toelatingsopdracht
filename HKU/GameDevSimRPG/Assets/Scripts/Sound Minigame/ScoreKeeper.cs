@@ -19,11 +19,6 @@ public class ScoreKeeper : MonoBehaviour {
 
     public Slider EnergyBar;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -52,6 +47,13 @@ public class ScoreKeeper : MonoBehaviour {
             EnergyText2.gameObject.SetActive(false);
 
             FinalScoreText.text = "Game over\n your final score is\n" + Score;
+            ExpSave(Score);
         }
+    }
+
+    public void ExpSave(float score)
+    {
+        float exp = score / 15;
+        PlayerPrefs.SetFloat("SoundExp", exp);
     }
 }

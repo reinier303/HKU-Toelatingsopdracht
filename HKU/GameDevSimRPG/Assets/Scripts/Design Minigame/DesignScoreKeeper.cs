@@ -49,6 +49,7 @@ public class DesignScoreKeeper : MonoBehaviour {
         if(Energy > 0)
         {
             Timer -= Time.deltaTime;
+            ExpSave(Score);
         }
 
         if(Timer <= 0)
@@ -57,5 +58,11 @@ public class DesignScoreKeeper : MonoBehaviour {
             scoreToGive += 0.075f;
             Score += scoreToGive / 10;
         }
+    }
+
+    public void ExpSave(float score)
+    {
+        float exp = score / 15;
+        PlayerPrefs.SetFloat("DesignExp", exp);
     }
 }

@@ -70,6 +70,7 @@ public class ArtScoreKeeper : MonoBehaviour
             TimerText.gameObject.SetActive(false);
 
             FinalScoreText.text = "Game over\n your final score is\n" + Score;
+            ExpSave(Score);
         }
 
         if (blocksClicked == blocksNeededForReset)
@@ -96,5 +97,11 @@ public class ArtScoreKeeper : MonoBehaviour
             yield return new WaitForSeconds(1);
             removeable = true;
         }
+    }
+
+    public void ExpSave(float score)
+    {
+        float exp = score / 15;
+        PlayerPrefs.SetFloat("ArtExp", exp);
     }
 }
