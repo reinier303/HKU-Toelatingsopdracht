@@ -13,5 +13,6 @@ public class SaveName : MonoBehaviour {
         string name = NameField.text;
         NameText.text = name;
         PlayerPrefs.SetString("CompanyName", name);
+        PlayerPrefs.SetInt("NameSaved", 1);
     }
 }
