@@ -6,6 +6,7 @@ public class SaveStats : MonoBehaviour {
 
     public static void StatSave()
     {
+        /*
         //Lvls
         PlayerPrefs.SetInt("CompanyLvl", );
         PlayerPrefs.SetInt("DesignLvl", );
@@ -23,5 +24,6 @@ public class SaveStats : MonoBehaviour {
         PlayerPrefs.SetFloat();
         PlayerPrefs.SetFloat();
         PlayerPrefs.SetFloat();
+        */
     }
 }
