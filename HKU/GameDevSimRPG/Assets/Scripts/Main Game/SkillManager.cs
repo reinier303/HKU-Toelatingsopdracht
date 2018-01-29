@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class SkillManager : MonoBehaviour {
 
-    public float designLvl;
-    public float artLvl;
-    public float soundLvl;
-    public float codingLvl;
+    public float designLvl = 1;
+    public float artLvl = 1;
+    public float soundLvl = 1;
+    public float codingLvl = 1;
 
     public float designExp;
     public float artExp;

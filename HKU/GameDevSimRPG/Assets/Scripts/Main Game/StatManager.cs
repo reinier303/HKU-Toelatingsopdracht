@@ -12,18 +12,19 @@ public class StatManager : MonoBehaviour {
     public float Money;
     public float Fans;
     public int Lvl;
+    public float CompanyExp;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
-        MoneyText.text = "Money: " + Money;
-        FansText.text = "Fans: " + Fans;
+        MoneyText.text = "Money: " + PlayerPrefs.GetFloat("Money");
+        FansText.text = "Fans: " + PlayerPrefs.GetFloat("Fans");
         LvlText.text = "Lvl: " + Lvl;
     }
 }

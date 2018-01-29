@@ -7,6 +7,7 @@ public class OnStart : MonoBehaviour {
 
     public GameObject NamePanel;
     public Text NameText;
+    public SaveStats Save;
 
     void Start()
     {

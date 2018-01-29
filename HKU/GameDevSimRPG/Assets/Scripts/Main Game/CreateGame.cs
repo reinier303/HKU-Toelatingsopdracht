@@ -66,6 +66,8 @@ public class CreateGame : MonoBehaviour {
         StM.Fans += Mathf.Round(FansGained);
 
         FansText.text = "Fans Gained: " + Mathf.Round(FansGained);
+
+        PlayerPrefs.SetFloat("Fans", StM.Fans);
     }
 
     void CalculateMoney()
@@ -108,5 +110,7 @@ public class CreateGame : MonoBehaviour {
         StM.Money += Mathf.Round(MoneyGained);
 
         MoneyText.text = "Money Gained: " + Mathf.Round(MoneyGained);
+
+        PlayerPrefs.SetFloat("Money", StM.Money);
     }
 }
