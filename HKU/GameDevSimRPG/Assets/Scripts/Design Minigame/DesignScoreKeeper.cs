@@ -44,7 +44,7 @@ public class DesignScoreKeeper : MonoBehaviour {
             OS.active = false;
             scoreToGive = 0;
 
-            FinalScoreText.text = "Game over\n your final score is\n" + Score;
+            FinalScoreText.text = "Game over\n your final score is\n" + Mathf.Round(Score);
         }
         if(Energy > 0)
         {

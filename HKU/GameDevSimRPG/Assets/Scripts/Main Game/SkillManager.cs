@@ -32,6 +32,11 @@ public class SkillManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        designExp = PlayerPrefs.GetFloat("DesignExp");
+        codingExp = PlayerPrefs.GetFloat("CodingExp");
+        artExp = PlayerPrefs.GetFloat("ArtExp");
+        soundExp = PlayerPrefs.GetFloat("SoundExp");
+
         designBar.value = designExp / designExpNeeded;
         artBar.value = artExp / artExpNeeded;
         soundBar.value = soundExp / soundExpNeeded;
