@@ -1597,6 +1597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NamePanel: {fileID: 382919470}
   NameText: {fileID: 620661246}
+  Save: {fileID: 0}
 --- !u!1 &397914913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,6 +1707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0213995d456fca4c9d740a444a33d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Save: {fileID: 397914919}
 --- !u!114 &397914919
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class BackToMain : MonoBehaviour {
     public void ToMain()
     {
         string Score = FinalScoreText.text.Replace("Game over\n your final score is\n", "");
+        print(Score);
         Finalscore = Convert.ToInt32(Score);
         SceneManager.LoadScene(1);
         if(SceneManager.GetActiveScene().buildIndex == 2)

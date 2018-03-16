@@ -63,16 +63,14 @@ public class CreateGame : MonoBehaviour {
 
         float FansGained = ((Fans + 1)) / Random.Range(12f - Rating,50 - (Rating * 2f)) + 1;
 
-        StM.Fans += Mathf.Round(FansGained);
-
         FansText.text = "Fans Gained: " + Mathf.Round(FansGained);
 
-        PlayerPrefs.SetFloat("Fans", StM.Fans);
+        PlayerPrefs.SetFloat("Fans", PlayerPrefs.GetFloat("Fans") + Mathf.Round(FansGained));
     }
 
     void CalculateMoney()
     {
-        float MoneyGained = Rating * (Random.Range(StM.Fans * 2f, StM.Fans * 8));
+        float MoneyGained = Rating * (Random.Range(PlayerPrefs.GetFloat("Fans") * 2f, PlayerPrefs.GetFloat("Fans") * 8));
 
         if(Rating == 1)
         {
@@ -107,10 +105,8 @@ public class CreateGame : MonoBehaviour {
             MoneyGained *= 0.95f;
         }
 
-        StM.Money += Mathf.Round(MoneyGained);
-
         MoneyText.text = "Money Gained: " + Mathf.Round(MoneyGained);
 
-        PlayerPrefs.SetFloat("Money", StM.Money);
+        PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + Mathf.Round(MoneyGained));
     }
 }

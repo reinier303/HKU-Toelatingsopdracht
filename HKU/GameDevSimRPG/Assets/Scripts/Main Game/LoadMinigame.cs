@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LoadMinigame : MonoBehaviour {
 
+    public SaveStats Save;
+
     public void MinigameLoad(int sceneNumber)
     {
+        Save.StatSave();
         SceneManager.LoadScene(sceneNumber);
     }
 }

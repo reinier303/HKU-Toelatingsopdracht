@@ -1522,6 +1522,7 @@ GameObject:
   - component: {fileID: 1179669544}
   - component: {fileID: 1179669543}
   - component: {fileID: 1179669542}
+  - component: {fileID: 1179669546}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -1559,6 +1560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a51b7888b0a814b872674c14c27a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exp: {fileID: 1179669546}
+  FinalScoreText: {fileID: 814095463}
+  Finalscore: 0
 --- !u!114 &1179669543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1644,6 +1648,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1179669540}
+--- !u!114 &1179669546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1179669540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fa14db8495584439783265290917a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1252979177
 GameObject:
   m_ObjectHideFlags: 0
